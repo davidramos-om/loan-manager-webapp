@@ -1,39 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { ChakraProvider } from '@chakra-ui/react'
+
+import theme from './theme';
 import './App.css'
+import { CallToActionWithAnnotation } from './components/WelcomeCardCTA';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  const reload = () => {
-    window.location.reload()
-  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>v3, Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <button onClick={reload}>Reload</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ChakraProvider theme={theme}>
+      <CallToActionWithAnnotation />
+    </ChakraProvider>
   )
 }
 
