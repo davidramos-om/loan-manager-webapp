@@ -10,6 +10,7 @@ const confi: ThemeConfig = {
 
 const theme = extendTheme({
   config: confi,
+
   components: {
     Button,
   },

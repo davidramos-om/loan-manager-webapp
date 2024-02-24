@@ -1,14 +1,16 @@
 import { ChakraProvider } from '@chakra-ui/react'
 
+import Router from './routes';
 import theme from './theme';
 import './App.css'
-import { CallToActionWithAnnotation } from './components/WelcomeCardCTA';
+import DisableTouchHighlight from './components/DisableTouchHighlight';
 
 function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <CallToActionWithAnnotation />
+      <DisableTouchHighlight />
+      <Router />
     </ChakraProvider>
   )
 }
