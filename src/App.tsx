@@ -6,6 +6,10 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  const reload = () => {
+    window.location.reload()
+  }
+
   return (
     <>
       <div>
@@ -21,6 +25,7 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <button onClick={reload}>Reload</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
