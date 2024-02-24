@@ -1,7 +1,7 @@
-import { MortgageCalculator } from "rules/MortgageCalculator";
-import { newId } from "utils/string/ids";
-import { appVersion } from "utils/string/versions";
-import { BaseRecord } from "./BaseRecord";
+import { MortgageCalculator } from 'src/rules/MortgageCalculator';
+import { newId } from 'src/utils/string/ids';
+import { appVersion } from 'src/utils/string/versions';
+import { BaseRecord } from './BaseRecord';
 
 export interface LoanCalcDefaults {
   years: number;
@@ -27,7 +27,11 @@ export interface LoanRecord extends BaseRecord {
   details: LoanRecordDetails[];
 }
 
-export const parseDefaultLoanCalcValues = (object: any): LoanCalcDefaults => {
+export const parseDefaultLoanCalcValues = (object: {
+  years: number;
+  interest: number;
+  downPayment: number;
+}): LoanCalcDefaults => {
   const { years, interest, downPayment } = object || {};
   const parsed: LoanCalcDefaults = {
     years: years || 0,
@@ -37,7 +41,7 @@ export const parseDefaultLoanCalcValues = (object: any): LoanCalcDefaults => {
   return parsed;
 };
 
-export const parseLoanRecord = (object: any): LoanRecord => {
+export const parseLoanRecord = (object: LoanRecord): LoanRecord => {
   const {
     id,
     date,
@@ -46,7 +50,7 @@ export const parseLoanRecord = (object: any): LoanRecord => {
     image,
     isDraft,
     amount,
-    interest,
+    interestRate,
     downPayment,
     months,
     principal,
@@ -55,7 +59,7 @@ export const parseLoanRecord = (object: any): LoanRecord => {
   } = object || {};
 
   const parsedDetails = Array.isArray(details)
-    ? details.map((detail: any) => {
+    ? details.map((detail) => {
         const d: LoanRecordDetails = {
           date: detail.date || 0,
           month: detail.month || 0,
@@ -68,19 +72,19 @@ export const parseLoanRecord = (object: any): LoanRecord => {
     : [];
 
   const parsed: LoanRecord = {
-    id: id || "",
+    id: id || '',
     date: date || 0,
-    name: name || "",
-    description: description || "",
-    image: image === "test" ? "" : image || "",
+    name: name || '',
+    description: description || '',
+    image: image === 'test' ? '' : image || '',
     isDraft: isDraft || false,
     amount: amount || 0,
-    interestRate: interest || 0,
+    interestRate: interestRate || 0,
     downPayment: downPayment || 0,
     months: months || 0,
     principal: principal || 0,
     details: parsedDetails,
-    appVersion: appVersion || "",
+    appVersion: appVersion || '',
   };
 
   return parsed;
