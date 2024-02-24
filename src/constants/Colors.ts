@@ -1,0 +1,24 @@
+const tintColorLight = '#2f95dc';
+const tintColorDark = '#fff';
+
+export const vividOrange = '#f50';
+export const vividGreen = '#0f0';
+
+export default {
+  light: {
+    text: '#000',
+    background: '#fff',
+    tint: tintColorLight,
+    tabIconDefault: '#ccc',
+    tabIconSelected: tintColorLight,
+    loader: 'blue',
+  },
+  dark: {
+    text: '#fff',
+    background: '#000',
+    tint: tintColorDark,
+    tabIconDefault: '#ccc',
+    tabIconSelected: tintColorDark,
+    loader: 'red',
+  },
+};
