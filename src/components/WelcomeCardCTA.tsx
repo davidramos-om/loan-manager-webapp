@@ -7,6 +7,9 @@ import {
     Stack
 } from '@chakra-ui/react'
 
+import paths from 'src/routes/path'
+import RouterLink from 'src/routes/router-link'
+
 export function CallToActionWithAnnotation() {
     return (
         <>
@@ -33,20 +36,26 @@ export function CallToActionWithAnnotation() {
                         spacing={10}
                         align={'center'}
                         alignSelf={'center'}
-                        position={'relative'}>
-                        <Button
-                            colorScheme={'green'}
-                            bg={'green.400'}
-                            rounded={'full'}
-                            px={6}
-                            _hover={{
-                                bg: 'green.500',
-                            }}>
-                            Crear cuenta
-                        </Button>
-                        <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-                            Ingresar con cuenta existente
-                        </Button>
+                        position={'relative'}
+                    >
+                        <RouterLink href={paths.NEW_ACCOUNT}>
+                            <Button
+                                colorScheme={'green'}
+                                bg={'green.400'}
+                                rounded={'full'}
+                                px={6}
+                                _hover={{
+                                    bg: 'green.500',
+                                }}>
+                                Crear cuenta
+                            </Button>
+                        </RouterLink>
+
+                        <RouterLink href={paths.ADD_ACCOUNT}>
+                            <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
+                                Ingresar con cuenta existente
+                            </Button>
+                        </RouterLink>
                     </Stack>
                 </Stack>
             </Container>
