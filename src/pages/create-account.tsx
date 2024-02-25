@@ -1,4 +1,4 @@
-import { CreateAnonymousAccountForm } from "src/components/CreateAID";
+import { CreateAnonymousAccountForm } from "src/components/blocks/CreateAID";
 
 const CreateAcount = () => {
     return (
