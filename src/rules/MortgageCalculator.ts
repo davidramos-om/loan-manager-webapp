@@ -50,9 +50,7 @@ export class MortgageCalculator {
     const numberOfPayments: number = this.loanTermMonths;
 
     // Monthly payment calculation using the formula for fixed monthly payments
-    this.monthlyPayment =
-      (this.principal * monthlyInterestRate) /
-      (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+    this.monthlyPayment = (this.principal * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
 
     this.generatePaymentSchedule();
   }
@@ -76,10 +74,7 @@ export class MortgageCalculator {
   }
 
   private calculateTotalInterestPaid(): number {
-    const totalInterestPaid = this.paymentSchedule.reduce(
-      (total, payment) => total + payment.interest,
-      0
-    );
+    const totalInterestPaid = this.paymentSchedule.reduce((total, payment) => total + payment.interest, 0);
     return totalInterestPaid;
   }
 
@@ -121,9 +116,7 @@ export class MortgageCalculator {
 
     this.paymentSchedule.forEach((payment) => {
       this.logger.debug(
-        `   |   ${payment.month.toString().padStart(6, ' ')}  |  $${payment.principal
-          .toFixed(2)
-          .padStart(10, ' ')}  |  $${payment.interest
+        `   |   ${payment.month.toString().padStart(6, ' ')}  |  $${payment.principal.toFixed(2).padStart(10, ' ')}  |  $${payment.interest
           .toFixed(2)
           .padStart(9, ' ')}  |  $${payment.balance.toFixed(2).padStart(8, ' ')}  |`
       );

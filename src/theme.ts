@@ -5,7 +5,7 @@ const { Button } = chakraTheme.components;
 const confi: ThemeConfig = {
   initialColorMode: 'light',
   useSystemColorMode: false,
-  cssVarPrefix: 'byln',
+  cssVarPrefix: 'baby',
 };
 
 const theme = extendTheme({
