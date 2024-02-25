@@ -1,4 +1,4 @@
-import { CallToActionWithAnnotation } from "src/components/blocks/WelcomeCardCTA";
+import { CallToActionWithAnnotation } from "src/components/templates/WelcomeCardCTA";
 
 const HomePage = () => {
     return (

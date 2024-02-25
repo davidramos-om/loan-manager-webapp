@@ -1,4 +1,4 @@
-import { AddExistingAnonymousAccountForm } from "src/components/blocks/AddAID";
+import { AddExistingAnonymousAccountForm } from "src/components/templates/AddAID";
 
 const AddExistingAcountPage = () => {
     return (
