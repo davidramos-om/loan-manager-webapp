@@ -66,7 +66,7 @@ export default function AppLayout(props: Props) {
 
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link.href} href={link.href}>
+                <NavLink key={link.href} href={link.href} onClick={onClose}>
                   {link.label}
                 </NavLink>
               ))}
@@ -101,7 +101,7 @@ export default function AppLayout(props: Props) {
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link.href} href={link.href}>
+                <NavLink key={link.href} href={link.href} onClick={onClose}>
                   {link.label}
                 </NavLink>
               ))}

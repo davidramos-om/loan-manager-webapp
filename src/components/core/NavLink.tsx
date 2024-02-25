@@ -1,8 +1,10 @@
 import { Box, useColorModeValue } from '@chakra-ui/react';
+import RouterLink from 'src/routes/router-link';
 
 interface Props {
   children: React.ReactNode;
   href: string;
+  onClick?: () => void;
 }
 
 export const NavLink = (props: Props) => {
@@ -11,7 +13,7 @@ export const NavLink = (props: Props) => {
 
   return (
     <Box
-      as="a"
+      as={RouterLink}
       px={2}
       py={1}
       rounded={'md'}
@@ -20,6 +22,7 @@ export const NavLink = (props: Props) => {
         bg,
       }}
       href={props.href}
+      onClick={props.onClick}
     >
       {children}
     </Box>
