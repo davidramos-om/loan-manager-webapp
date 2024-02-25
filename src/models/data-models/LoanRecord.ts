@@ -27,11 +27,7 @@ export interface LoanRecord extends BaseRecord {
   details: LoanRecordDetails[];
 }
 
-export const parseDefaultLoanCalcValues = (object: {
-  years: number;
-  interest: number;
-  downPayment: number;
-}): LoanCalcDefaults => {
+export const parseDefaultLoanCalcValues = (object: { years: number; interest: number; downPayment: number }): LoanCalcDefaults => {
   const { years, interest, downPayment } = object || {};
   const parsed: LoanCalcDefaults = {
     years: years || 0,
@@ -42,21 +38,7 @@ export const parseDefaultLoanCalcValues = (object: {
 };
 
 export const parseLoanRecord = (object: LoanRecord): LoanRecord => {
-  const {
-    id,
-    date,
-    name,
-    description,
-    image,
-    isDraft,
-    amount,
-    interestRate,
-    downPayment,
-    months,
-    principal,
-    details,
-    appVersion,
-  } = object || {};
+  const { id, date, name, description, image, isDraft, amount, interestRate, downPayment, months, principal, details, appVersion } = object || {};
 
   const parsedDetails = Array.isArray(details)
     ? details.map((detail) => {
@@ -103,14 +85,7 @@ export const transformToLoanRecord = ({
   draft: boolean;
   mortgage: MortgageCalculator;
 }): LoanRecord => {
-  const {
-    loanAmount,
-    interestRate,
-    downPaymentPercentage,
-    loanTermMonths,
-    paymentSchedule,
-    principal,
-  } = mortgage.getValues();
+  const { loanAmount, interestRate, downPaymentPercentage, loanTermMonths, paymentSchedule, principal } = mortgage.getValues();
 
   const details = paymentSchedule.map((payment) => {
     const { month, principal, interest, balance } = payment;
