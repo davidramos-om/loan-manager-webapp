@@ -3,7 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Router from './routes';
 import theme from './theme';
 import './App.css'
-import DisableTouchHighlight from './components/DisableTouchHighlight';
+import DisableTouchHighlight from './components/core/DisableTouchHighlight';
 
 function App() {
 
