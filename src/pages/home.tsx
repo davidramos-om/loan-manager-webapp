@@ -1,9 +1,7 @@
-import { CallToActionWithAnnotation } from "src/components/templates/WelcomeCardCTA";
+import { CallToActionWithAnnotation } from 'src/components/templates/WelcomeCardCTA';
 
 const HomePage = () => {
-    return (
-        <CallToActionWithAnnotation />
-    );
-}
+  return <CallToActionWithAnnotation />;
+};
 
 export default HomePage;

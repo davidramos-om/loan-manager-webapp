@@ -1,9 +1,7 @@
-import { CreateAnonymousAccountForm } from "src/components/templates/CreateAID";
+import { CreateAnonymousAccountForm } from 'src/components/templates/CreateAID';
 
 const CreateAcount = () => {
-    return (
-        <CreateAnonymousAccountForm />
-    );
-}
+  return <CreateAnonymousAccountForm />;
+};
 
 export default CreateAcount;
